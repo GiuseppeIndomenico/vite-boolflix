@@ -1,4 +1,4 @@
-@import './partials/variables';
+@use './partials/variables' as *;
 
 body{
     height: 100%;
@@ -6,3 +6,6 @@ body{
     color: #e23946;
    
 }
+
+// background: rgb(232,61,71);
+// background: linear-gradient(0deg, rgba(232,61,71,1) 42%, rgba(248,249,250,1) 95%);
