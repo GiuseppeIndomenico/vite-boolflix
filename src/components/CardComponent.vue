@@ -17,9 +17,9 @@ export default {
     methods: {
         GetPopular() {
             axios.get(store.Url.base + store.endPoint.popular + store.key).then(res=>{
-                console.log(res.data);
+                console.log(res.data.results);
                 
-                //risulta vuoto nonostante la chiamata sia giusta >.<
+                //sono un cretino...mancava uno slash
                     
 
 

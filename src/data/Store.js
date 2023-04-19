@@ -6,7 +6,7 @@ export const store = reactive({
         imgThumb: 'https://image.tmdb.org/t/p/w500/',
     },
     endPoint: {
-        popular: 'trending/all/day?'
+        popular: '/trending/all/day?'
     },
     key: 'api_key=2010639fc959155bb3be029b450b5c82',
     movieTrend: [],
