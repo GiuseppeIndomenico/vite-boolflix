@@ -17,7 +17,7 @@ export default {
     methods: {
         GetPopular() {
             axios.get(store.Url.base + store.endPoint.popular + store.key).then(res=>{
-                console.log(res.page);
+                console.log(res);
 
 
 
