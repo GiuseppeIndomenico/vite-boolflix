@@ -1,0 +1,36 @@
+MILESTONE0
+
+capire come scrivere delle milestones
+
+MILESTONE BONUS:
+
+non impazzire durante l'esercizio
+
+MILESTONE 1 
+
+capire come suddividere le varie parti in componenti;
+probabilmente in un SearchComponent dove andranno logo e barra di ricerca e un MainComponent dove andremo ad inserire le varie card;
+le card a loro volta, possono avere un component adibito a questo scopo e quindi un CardComponent 
+
+MILESTONE 2
+
+oltre i vari component, studiare e assimilare la documentazione dell'API assegnata e ricreare uno store di dati da cui ricreeremo i nostri elementi in pagina reattivi;
+
+MILESTONE 3 
+
+iniziare a ricreare un'intefaccia utente a componenti statici in modo dale da capire come potrà risultare il risultato finale;
+partire dal SearchComponent potrebbe essere una buona idea e lasciarlo statico ;
+
+MILESTONE 4 
+
+fare lo stesso procedimento col MainComponent dopodichè iniziare a collegare le varie locandine/genere/voti tramite lo store con tutte le informazioni;
+
+MILESTONE 5 
+ 
+Filtrare i vari film attaverso la barra di ricerca del SearchComponente farla funzionare;
+
+MILESTONE 6
+
+bellurie varie;
+
+
