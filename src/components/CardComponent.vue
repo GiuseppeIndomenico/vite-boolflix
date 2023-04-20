@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 position-relative p-0 gi-div">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 position-relative p-0 gi-div shadow">
         <div v-if="image">
             <img class="img-fluid" :src="store.Url.imgThumb + image" :alt="title">
         </div>
@@ -71,6 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .gi-div {
+    cursor: pointer;
     transition: all 0.5s;
 
     .gi-flag {
