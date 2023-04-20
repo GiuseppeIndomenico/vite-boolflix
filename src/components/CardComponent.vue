@@ -1,8 +1,8 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 position-relative p-0 gi-div">
         <img class="img-fluid" :src="store.Url.imgThumb + image" :alt="title">
-        <div class="gi-card">
-            <p>{{ title }}</p>
+        <div class="gi-card text-light">
+            <h5>{{ title }}</h5>
             <p>{{ release }}</p>
             <p>{{ vote }}</p>
             <p> {{ language }}</p>
@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .gi-div {
-
+    transition: all 0.5s;
 
     .gi-card {
         position: absolute;
@@ -45,8 +45,15 @@ export default {
 
     }
 
-    &:hover .gi-card {
-        opacity: 1;
+    &:hover {
+        scale: 1.2;
+        z-index: 2;
+
+        .gi-card {
+
+
+            opacity: 1;
+        }
     }
 }
 </style>
