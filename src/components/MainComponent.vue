@@ -30,46 +30,6 @@ export default {
             store
         }
     },
-    methods: {
-        getPopular() {
-            const urlTrend = store.Url.base + store.key;
-            axios.get(urlTrend).then(res => {
-                store.showTrend = res.data.results;
-                console.log(store.showTrend);
-            })
-        },//da rivedere
-        getMovies() {
-            const urlMovies = store.Url.base + store.endPoint.movie;
-            const options = {
-                params: store.params
-            };
-            axios.get(urlMovies, options).then((res) => {
-                store.movies = res.data.results;
-                console.log(store.movies);
-
-            })
-        },
-        getSeries() {
-            const urlSeries = store.Url.base + store.endPoint.series;
-            const options = {
-                params: store.params
-            };
-            axios.get(urlSeries, options).then((res) => {
-                store.series = res.data.results;
-                console.log(store.series);
-
-            })
-        },
-
-        getShow() {
-            this.getMovies(),
-                this.getSeries()
-        }
-
-
-
-    }
-
 
 }
 </script>

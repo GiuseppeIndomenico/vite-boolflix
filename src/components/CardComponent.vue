@@ -3,27 +3,34 @@
         <img class="img-fluid" :src="store.Url.imgThumb + image" :alt="title">
         <div class="gi-card text-light">
             <h5>{{ title }}</h5>
+            <div v-if="vote">
+                <StarComponent :rating="(vote / 2)" />
+            </div>
             <p>{{ release }}</p>
-            <p>{{ vote }}</p>
             <p> {{ language }}</p>
         </div>
-
     </div>
 </template>
 
 <script>
+import StarComponent from './StarComponent.vue';
 import { store } from '../data/Store';
 export default {
     props: [
         'title', 'language', 'vote',
         'release', 'image', 'id'
     ],
+    components: {
+        StarComponent
+    },
     data() {
         return {
             store,
 
         }
     },
+
+
 
 }
 </script>

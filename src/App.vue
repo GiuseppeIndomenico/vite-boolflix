@@ -31,6 +31,15 @@ export default {
         console.log(store.showTrend);
       })
     },//da rivedere
+    starClass(index, rating) {
+      if (index <= rating) {
+        return 'fas fa-star';
+      } else if (index - rating <= 0.5) {
+        return 'fas fa-star-half-alt';
+      } else {
+        return 'far fa-star';
+      }
+    },
     getMovies() {
       const urlMovies = store.Url.base + store.endPoint.movie;
       const options = {
@@ -39,8 +48,9 @@ export default {
       axios.get(urlMovies, options).then((res) => {
         store.movies = res.data.results;
         // console.log(store.movies);
-
+        this.starClass()
       })
+
     },
     getSeries() {
       const urlSeries = store.Url.base + store.endPoint.series;
@@ -53,6 +63,7 @@ export default {
 
       })
     },
+
 
     getShow() {
       this.getMovies(),
