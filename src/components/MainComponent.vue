@@ -68,9 +68,6 @@ export default {
 
 
 
-    },
-    mounted() {
-        this.getShow()
     }
 
 

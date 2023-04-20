@@ -6,22 +6,33 @@
             </div>
             <div>
                 <div class="input-group">
-                    <input placeholder="Cerca..." type="text">  <button class="btn btn-outline-danger"> <i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input @keyup.enter="$emit('on-search')" v-model="store.params.query" placeholder="Cerca..."
+                        type="text">
+                    <button @click="$emit('on-search')" class="btn btn-outline-danger">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
+
             </div>
         </div>
-        </header>
+    </header>
 </template>
 
 <script>
-    export default {
-        
+import axios from 'axios';
+import { store } from '../data/Store';
+export default {
+    data() {
+        return {
+            store
+        }
     }
+}
 </script>
 
 <style lang="scss" scoped>
- .gi-bg{
-    background: rgb(20,20,20);
-background: linear-gradient(0deg, rgba(20,20,20,1) 9%, rgba(33,37,41,1) 78%);
- }
+.gi-bg {
+    background: rgb(20, 20, 20);
+    background: linear-gradient(0deg, rgba(20, 20, 20, 1) 9%, rgba(33, 37, 41, 1) 78%);
+}
 </style>
