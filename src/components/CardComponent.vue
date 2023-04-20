@@ -25,9 +25,10 @@ export default {
                     const infoMovies = {
                         id: element.id,
                         title: element.title,
+                        name:element.name,
                         largeImg: element.backdrop_path,
                         posterImg: element.poster_path,
-                        overwiew: element.overwiew,
+                        overview: element.overview,
                     };
                     store.movieTrend.push(infoMovies);
                 };
