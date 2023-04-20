@@ -19,9 +19,3 @@ export const store = reactive({
     },
 
 })
-
-//Key API: 2010639fc959155bb3be029b450b5c82
-
-//
-
-//https://api.themoviedb.org/3/movie/550?api_key=2010639fc959155bb3be029b450b5c82
