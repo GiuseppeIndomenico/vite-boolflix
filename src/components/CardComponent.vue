@@ -1,36 +1,28 @@
 <template>
-    <div class="row">
-        <div class="col">card</div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <img :src="store.Url.imgThumb + image" alt="">
+        <p>{{ title }}</p>
+        <p>{{ release }}</p>
+        <p>{{ vote }}</p>
+        <p> {{ language }}</p>
+
     </div>
 </template>
 
 <script>
-import axios from 'axios';
 import { store } from '../data/Store';
 export default {
+    props: [
+        'title', 'language', 'vote',
+        'release', 'image'
+    ],
     data() {
         return {
             store,
 
         }
     },
-    methods: {
-        GetPopular() {
-            axios.get(store.Url.base + store.endPoint.popular + store.key).then(res => {
-                //console.log(res.data.results);
-                store.movieTrend = res.data.results;
-                   
-                console.log(store.movieTrend);
-            })
-        },
 
-
-    },
-    mounted() {
-        this.GetPopular()
-    }
-    
-    
 }
 </script>
 

@@ -1,23 +1,33 @@
 <template>
   <div class="wrapper bg-dark-subtle">
-    <SearchComponent/>
-    <MainComponent/>
+    <SearchComponent />
+
+    <MainComponent />
   </div>
-  </template>
+</template>
 <script>
+import { store } from "./data/Store";
+import axios from 'axios';
 import SearchComponent from './components/SearchComponent.vue';
+import CardComponent from './components/CardComponent.vue';
 import MainComponent from './components/MainComponent.vue';
-import axios from'axios'
 export default {
-components:{
-  SearchComponent,
-  MainComponent,
-}
+  components: {
+    SearchComponent,
+    CardComponent,
+    MainComponent
+  },
+  data() {
+    return {
+      store
+    }
+  },
+
 }
 </script>
 
 <style lang="scss" scoped>
-.wrapper{
+.wrapper {
   width: 100%;
 
 }
