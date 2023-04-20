@@ -38,7 +38,7 @@ export default {
       };
       axios.get(urlMovies, options).then((res) => {
         store.movies = res.data.results;
-        console.log(store.movies);
+        // console.log(store.movies);
 
       })
     },
@@ -49,7 +49,7 @@ export default {
       };
       axios.get(urlSeries, options).then((res) => {
         store.series = res.data.results;
-        console.log(store.series);
+        // console.log(store.series);
 
       })
     },

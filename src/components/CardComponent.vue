@@ -1,6 +1,6 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <img :src="store.Url.imgThumb + image" alt="">
+        <img :src="store.Url.imgThumb + image" :alt="title">
         <p>{{ title }}</p>
         <p>{{ release }}</p>
         <p>{{ vote }}</p>
@@ -14,7 +14,7 @@ import { store } from '../data/Store';
 export default {
     props: [
         'title', 'language', 'vote',
-        'release', 'image'
+        'release', 'image', 'id'
     ],
     data() {
         return {
