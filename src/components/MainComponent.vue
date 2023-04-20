@@ -19,7 +19,6 @@
 
 <script>
 import { store } from "../data/Store";
-import axios from 'axios'
 import CardComponent from "./CardComponent.vue";
 export default {
     components: {

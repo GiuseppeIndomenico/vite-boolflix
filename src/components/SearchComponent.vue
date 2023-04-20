@@ -1,5 +1,5 @@
 <template>
-    <header class="gi-bg">
+    <header class="gi-bg fixed-top">
         <div class="px-5 py-2 d-flex align-items-center justify-content-between">
             <div>
                 <h3 class="text-danger fw-bold">BoolFlix</h3>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import { store } from '../data/Store';
 export default {
     data() {

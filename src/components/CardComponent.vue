@@ -1,13 +1,31 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 position-relative p-0 gi-div">
-        <img class="img-fluid" :src="store.Url.imgThumb + image" :alt="title">
-        <div class="gi-card text-light">
+        <div v-if="image">
+            <img class="img-fluid" :src="store.Url.imgThumb + image" :alt="title">
+        </div>
+        <div class="bg-dark" v-else>
+            <img class="img-fluid" src="/images/spallucce.jpg" alt="non disponibile">
+        </div>
+        <div class="gi-card text-light pt-1 pb-4">
             <h5>{{ title }}</h5>
-            <div v-if="vote">
-                <StarComponent :rating="(vote / 2)" />
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="m-0">valutazione:</p>
+                    <div class="mb-2" v-if="vote">
+                        <StarComponent :rating="(vote / 2)" />
+                    </div>
+
+                    <p>data di uscita: <br> <span v-if="release">{{ release }} </span>
+                        <span v-else>Non disponibile</span>
+                    </p>
+                </div>
+                <div class="d-flex flex-column align-items-end">
+                    <p class="text-center">lingua originale:</p>
+                    <div class="gi-flag me-2">
+                        <img class="img-fluid" :src="'/images/' + checkFlag + '.png'" :alt="language">
+                    </div>
+                </div>
             </div>
-            <p>{{ release }}</p>
-            <p> {{ language }}</p>
         </div>
     </div>
 </template>
@@ -26,9 +44,25 @@ export default {
     data() {
         return {
             store,
-
+            aviableFlags: [
+                'ar', 'de',
+                'en', 'es',
+                'fr', 'hi',
+                'it', 'ja',
+                'ko', 'zh',
+            ]
         }
     },
+    computed: {
+        checkFlag() {
+            if (this.aviableFlags.includes(this.language)) {
+                return this.language;
+            } else {
+                return 'wrld'
+            }
+        }
+
+    }
 
 
 
@@ -38,6 +72,12 @@ export default {
 <style lang="scss" scoped>
 .gi-div {
     transition: all 0.5s;
+
+    .gi-flag {
+        width: 30px;
+
+
+    }
 
     .gi-card {
         position: absolute;
