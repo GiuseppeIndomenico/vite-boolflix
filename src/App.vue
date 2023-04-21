@@ -1,6 +1,7 @@
 <template>
-  <div class="wrapper bg-dark-subtle">
+  <div class="wrapper bg-dark-subtle position-relative">
     <SearchComponent @on-search="getShow()" />
+    <carouselComponent v-for="pop in store.showTrend" :key="pop.id" :image="pop.backdrop_path" :title="pop.title" />
 
     <MainComponent />
   </div>
@@ -12,11 +13,13 @@ import axios from 'axios';
 import SearchComponent from './components/SearchComponent.vue';
 import CardComponent from './components/CardComponent.vue';
 import MainComponent from './components/MainComponent.vue';
+import carouselComponent from "./components/carouselComponent.vue";
 export default {
   components: {
     SearchComponent,
     CardComponent,
-    MainComponent
+    MainComponent,
+    carouselComponent,
   },
   data() {
     return {
@@ -25,12 +28,12 @@ export default {
   },
   methods: {
     getPopular() {
-      const urlTrend = store.Url.base + store.key;
+      const urlTrend = store.Url.base + store.endPoint.popular + store.key;
       axios.get(urlTrend).then(res => {
         store.showTrend = res.data.results;
         console.log(store.showTrend);
       })
-    },//da rivedere
+    },
     starClass(index, rating) {
       if (index <= rating) {
         return 'fas fa-star';
@@ -49,6 +52,8 @@ export default {
         store.movies = res.data.results;
         // console.log(store.movies);
         this.starClass()
+      }).finally(() => {
+        this.store.loaders.movie = false
       })
 
     },
@@ -61,21 +66,19 @@ export default {
         store.series = res.data.results;
         // console.log(store.series);
 
+      }).finally(() => {
+        this.store.loaders.series = false
       })
     },
-
-
     getShow() {
       this.store.loaders.movie = true;
       this.store.loaders.series = true;
       this.getMovies();
       this.getSeries();
 
-    }
-
-
-
-  }
+    },
+  },
+  mounted() { this.getPopular() }
 
 }
 </script>
