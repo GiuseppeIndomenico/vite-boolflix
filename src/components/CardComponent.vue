@@ -53,6 +53,10 @@ export default {
                 'it', 'ja',
                 'ko', 'zh',
                 'no', 'pl',
+                'nl', 'ms',
+                'th', 'el',
+                'pt', 'tr',
+                'cs'
             ]
         }
     },

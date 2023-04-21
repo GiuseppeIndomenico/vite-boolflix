@@ -66,8 +66,10 @@ export default {
 
 
     getShow() {
+      this.store.loaders.movie = true;
+      this.store.loaders.series = true;
       this.getMovies();
-      this.getSeries()
+      this.getSeries();
 
     }
 

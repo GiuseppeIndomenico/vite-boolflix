@@ -18,4 +18,9 @@ export const store = reactive({
         query: ''
     },
 
+    loaders: {
+        movie: false,
+        series: false
+    }
+
 })
