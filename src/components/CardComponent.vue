@@ -15,7 +15,9 @@
                         <StarComponent :rating="(vote / 2)" />
                     </div>
 
-                    <p>data di uscita: <br> <span v-if="release">{{ release }} </span>
+                    <p>
+                        data di uscita: <br>
+                        <span v-if="release">{{ release }} </span>
                         <span v-else>Non disponibile</span>
                     </p>
                 </div>
@@ -50,6 +52,7 @@ export default {
                 'fr', 'hi',
                 'it', 'ja',
                 'ko', 'zh',
+                'no', 'pl',
             ]
         }
     },

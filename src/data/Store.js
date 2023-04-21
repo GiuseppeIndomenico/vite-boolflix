@@ -15,7 +15,7 @@ export const store = reactive({
     series: [],
     params: {
         api_key: '2010639fc959155bb3be029b450b5c82',//inserire la mia key
-        query: 'a'
+        query: ''
     },
 
 })

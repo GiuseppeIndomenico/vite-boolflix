@@ -66,8 +66,9 @@ export default {
 
 
     getShow() {
-      this.getMovies(),
-        this.getSeries()
+      this.getMovies();
+      this.getSeries()
+
     }
 
 
