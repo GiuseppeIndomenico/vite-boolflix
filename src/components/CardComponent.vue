@@ -8,7 +8,7 @@
         </div>
         <div class="gi-card text-light pt-1 pb-4">
             <h5>{{ title }}</h5>
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-start justify-content-between">
                 <div>
                     <p class="m-0">valutazione:</p>
                     <div class="mb-2" v-if="vote">
@@ -19,6 +19,13 @@
                         data di uscita: <br>
                         <span v-if="release">{{ release }} </span>
                         <span v-else>Non disponibile</span>
+
+                    </p>
+                    <p>
+                        <span> overview: <br>
+                            <span v-if="trama">{{ trama }} </span>
+                            <span v-else>Non disponibile</span>
+                        </span>
                     </p>
                 </div>
                 <div class="d-flex flex-column align-items-end">
@@ -38,7 +45,7 @@ import { store } from '../data/Store';
 export default {
     props: [
         'title', 'language', 'vote',
-        'release', 'image', 'id'
+        'release', 'image', 'id', 'trama'
     ],
     components: {
         StarComponent
@@ -77,6 +84,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px transparent;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba($color: #000000, $alpha: 0.6);
+    }
+}
+
 .gi-div {
     cursor: pointer;
     transition: all 0.5s;
@@ -97,6 +124,7 @@ export default {
         opacity: 0;
         transition: all 0.5s;
         padding: 1rem;
+        overflow: auto;
 
     }
 

@@ -3,7 +3,7 @@ export const store = reactive({
     Url: {
         base: 'https://api.themoviedb.org/3',
         imgThumb: 'https://image.tmdb.org/t/p/w342/',
-        imgOriginal: 'https://image.tmdb.org/t/p/original/'
+        imgOriginal: 'https://image.tmdb.org/t/p/original'
     },
     endPoint: {
         popular: '/movie/top_rated?',
@@ -25,5 +25,5 @@ export const store = reactive({
         series: false
     },
     activeCard: '',
-
+    currentIndex: 0
 })

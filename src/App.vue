@@ -1,9 +1,11 @@
 <template>
   <div class="wrapper bg-dark-subtle position-relative">
     <SearchComponent @on-search="getShow()" />
-    <carouselComponent v-for="pop in store.showTrend" :key="pop.id" :image="pop.backdrop_path" :title="pop.title" />
+    <!-- <carouselComponent v-for="pop in store.showTrend" :key="pop.id" :image="pop.backdrop_path" :title="pop.title"
+      :overview="pop.overview" :release="pop.release_date" /> -->
 
     <MainComponent />
+
   </div>
 </template>
 
@@ -14,12 +16,14 @@ import SearchComponent from './components/SearchComponent.vue';
 import CardComponent from './components/CardComponent.vue';
 import MainComponent from './components/MainComponent.vue';
 import carouselComponent from "./components/carouselComponent.vue";
+
 export default {
   components: {
     SearchComponent,
     CardComponent,
     MainComponent,
     carouselComponent,
+
   },
   data() {
     return {
@@ -50,7 +54,7 @@ export default {
       };
       axios.get(urlMovies, options).then((res) => {
         store.movies = res.data.results;
-        // console.log(store.movies);
+        console.log(store.movies);
         this.starClass()
       }).finally(() => {
         this.store.loaders.movie = false
@@ -78,7 +82,7 @@ export default {
 
     },
   },
-  mounted() { this.getPopular() }
+  // mounted() { this.getPopular() }
 
 }
 </script>
@@ -88,4 +92,6 @@ export default {
   width: 100%;
 
 }
+
+;
 </style>

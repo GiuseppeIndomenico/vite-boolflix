@@ -1,8 +1,8 @@
 <template>
     <header class="gi-bg fixed-top">
-        <div class="px-5 py-2 d-flex align-items-center justify-content-between">
+        <div class="flex-column flex-sm-row px-2  px-sm-5 py-2 d-flex align-items-center justify-content-between">
             <div>
-                <h3 class="text-danger fw-bold"><a href="#">BoolFlix</a></h3>
+                <h3 class="text-danger fw-bold m-sm-0"><a href="#">BoolFlix</a></h3>
             </div>
             <div>
                 <div class="input-group">
